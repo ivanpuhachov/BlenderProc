@@ -223,6 +223,15 @@ def set_stereo_parameters(convergence_mode: str, convergence_distance: float, in
     cam.stereo.interocular_distance = interocular_distance
 
 
+def make_ortho_camera(
+        ortho_scale: float=3.0,
+):
+    cam_ob = bpy.context.scene.camera
+    cam = cam_ob.data
+    cam.type = "ORTHO"
+    cam.ortho_scale = ortho_scale
+
+
 def set_intrinsics_from_K_matrix(K: Union[np.ndarray, Matrix], image_width: int, image_height: int,
                                  clip_start: float = None, clip_end: float = None):
     """ Set the camera intrinsics via a K matrix.

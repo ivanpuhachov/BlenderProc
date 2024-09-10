@@ -1,3 +1,13 @@
+This is a fork of BlenderProc
+
+The only thing it does is adds an ortho camera and tests optical flow computations with orthographic camera on my custom camera positions.
+
+Install with `pip install -e .`
+
+Then run `blenderproc run test_compute_ortho_flow.py` 
+
+***
+
 # BlenderProc2
 
 [![Documentation](https://img.shields.io/badge/documentation-passing-brightgreen.svg)](https://dlr-rm.github.io/BlenderProc/)
