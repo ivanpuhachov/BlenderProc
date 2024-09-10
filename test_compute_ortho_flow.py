@@ -1,6 +1,7 @@
 import blenderproc as bproc
 import argparse
 from blenderproc.python.types.MeshObjectUtility import MeshObject, create_primitive
+import bpy
 
 """
 Follows blenderproc examples
@@ -26,11 +27,21 @@ bproc.init()
 # objs = bproc.loader.load_obj(args.scene)
 cube = create_primitive("CUBE")
 
+cheetah_image = bpy.data.images.load(filepath=str("cheetah_image.jpeg"))
+materials = bproc.material.collect_all()
+print(materials)
+# mat.set_principled_shader_value("Base Color", cheetah_image)
+
+mat = bproc.material.create(name="cheetah_material")
+mat.set_principled_shader_value("Base Color", cheetah_image)
+
+cube.add_material(mat)
+
 # define a light and set its location and energy level
 light = bproc.types.Light()
 light.set_type("POINT")
-light.set_location([5, -5, 5])
-light.set_energy(1000)
+light.set_location([0, -5, 5])
+light.set_energy(5000)
 
 # define the camera intrinsics
 bproc.camera.set_resolution(512, 512)
