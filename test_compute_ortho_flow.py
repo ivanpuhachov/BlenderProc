@@ -25,7 +25,8 @@ bproc.init()
 
 # load the objects into the scene
 # objs = bproc.loader.load_obj(args.scene)
-cube = create_primitive("CUBE")
+# cube = create_primitive("CUBE")
+cube = create_primitive("ICOSPHERE", subdivisions=5)
 
 cheetah_image = bpy.data.images.load(filepath=str("cheetah_image.jpeg"))
 materials = bproc.material.collect_all()
