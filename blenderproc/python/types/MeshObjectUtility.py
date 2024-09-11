@@ -627,6 +627,8 @@ def create_primitive(shape: str, **kwargs) -> "MeshObject":
         bpy.ops.mesh.primitive_plane_add(**kwargs)
     elif shape == "SPHERE":
         bpy.ops.mesh.primitive_uv_sphere_add(**kwargs)
+    elif shape == "ICOSPHERE":
+        bpy.ops.mesh.primitive_ico_sphere_add(**kwargs)
     elif shape == "MONKEY":
         bpy.ops.mesh.primitive_monkey_add(**kwargs)
     else:
